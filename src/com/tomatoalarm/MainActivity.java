@@ -1,36 +1,85 @@
 package com.tomatoalarm;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
+import android.view.Window;
 
+import com.core.fragment.BaseFragment;
+import com.core.utils.ToastUtil;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.tomatoalarm.dialog.AppExitDialog;
+import com.tomatoalarm.fragment.AlarmFragment;
+import com.tomatoalarm.fragment.LeftMenuFragment;
+import com.tomatoalarm.fragment.RightMenuFragment;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends SlidingFragmentActivity {
+
+    private BaseFragment mLeftMenuFragment;
+    private BaseFragment mRightMenuFragment;
+    private BaseFragment mMainFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        FragmentTransaction t = this.getSupportFragmentManager()
+                .beginTransaction();
+        // 主页
+        setContentView(R.layout.frame_main);
+        mMainFragment = new AlarmFragment();
+        t.replace(R.id.framelayout_main, mMainFragment);
+
+        // 左侧菜单
+        setBehindContentView(R.layout.frame_menu_left);
+        mLeftMenuFragment = new LeftMenuFragment();
+        t.replace(R.id.left_menu_frame, mLeftMenuFragment);
+        t.commit();
+        SlidingMenu sm = getSlidingMenu();
+        sm.setShadowWidthRes(R.dimen.width_slidingmenu_shadow);
+        sm.setShadowDrawable(R.drawable.slidingleftmenu_shadow);
+        sm.setBehindOffsetRes(R.dimen.offset_slidingmenu);
+        sm.setFadeDegree(0.35f);
+        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+
+        // 右侧菜单
+        sm.setMode(SlidingMenu.LEFT_RIGHT);
+        sm.setSecondaryMenu(R.layout.frame_menu_right);
+        mRightMenuFragment = new RightMenuFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.right_menu_frame, mRightMenuFragment).commit();
+        sm.setSecondaryShadowDrawable(R.drawable.slidingrightmenu_shadow);
     }
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ToastUtil.clear(this);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            new AppExitDialog(this).show();
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onKeyDown(keyCode, event);
     }
 }

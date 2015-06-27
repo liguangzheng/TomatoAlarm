@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="red">#ffff0000</color>
+    <color name="gray">#ffe0e0e0</color>
+    <color name="celltickview_rim">#02537E</color>
+    <color name="celltickview_start_inside">#0187D0</color>
+    <color name="celltickview_end_inside">#FF8000</color>
+
+</resources>

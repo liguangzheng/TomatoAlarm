@@ -1,7 +1,30 @@
 <resources>
 
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">30dp</dimen>
+    <dimen name="padding_xxlarge">50dp</dimen>
+    <dimen name="padding_xxxlarge">80dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="textsize_item_alarm_title_name">16sp</dimen>
+    <dimen name="width_linetickview_line">1px</dimen>
+    <dimen name="width_slidingmenu_shadow">15dp</dimen>
+    <dimen name="offset_slidingmenu">60dp</dimen>
+    <!-- 字体大小 -->
+    <dimen name="textsize_title_one">20sp</dimen>
+    <dimen name="textsize_title_two">18sp</dimen>
+    <dimen name="textsize_title_three">16sp</dimen>
+    <dimen name="textsize_normal">16sp</dimen>
+    <dimen name="textsize_large">18sp</dimen>
+    <dimen name="textsize_xlarge">20sp</dimen>
+    <dimen name="textsize_xxlarge">24sp</dimen>
+    <dimen name="textsize_small">14sp</dimen>
+    <!-- 标题栏、菜单栏项统一高度 -->
+    <dimen name="height_title">60dp</dimen>
+    <dimen name="height_title_shadow">2dp</dimen>
+    <dimen name="textsize_notification">20sp</dimen>
+    <dimen name="width_celltickview_rim">10dp</dimen>
 
 </resources>

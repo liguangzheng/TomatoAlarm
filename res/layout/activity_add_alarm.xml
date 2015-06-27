@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.tomatoalarm.view.LineTickView
+        android:id="@+id/tdv_add_alarm_drip"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        auto:linecolor="@color/black"
+        auto:linewidth="@dimen/width_linetickview_line" />
+
+</RelativeLayout>

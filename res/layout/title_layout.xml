@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/padding_normal"
+        android:paddingRight="@dimen/padding_normal" >
+
+        <ImageButton
+            android:id="@+id/ibtn_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_list_black_36dp" />
+
+        <ImageButton
+            android:id="@+id/ibtn_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_alarm_add_black_36dp" />
+
+        <TextView
+            android:id="@+id/tv_title_middle_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/ibtn_title_right"
+            android:layout_toRightOf="@id/ibtn_title_left"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/padding_normal"
+            android:text="@string/main_title_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_title_three" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title_shadow"
+        android:layout_alignBottom="@id/rl_title"
+        android:background="@drawable/title_shadow" />
+
+</RelativeLayout>

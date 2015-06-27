@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <com.tomatoalarm.view.LineTickView
+        android:id="@+id/tdv_alarm_item"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        auto:linecolor="@color/black"
+        auto:linewidth="@dimen/width_linetickview_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_alarm_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/tdv_alarm_item"
+        android:background="@drawable/selector_white_gray"
+        android:padding="@dimen/padding_normal" >
+
+        <TextView
+            android:id="@+id/tv_item_alarm_title_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_item_alarm_title_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_item_alarm_title_name" />
+
+        <TextView
+            android:id="@+id/tv_item_alarm_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_alarm_title_name"
+            android:text="@string/test_item_alarm_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_item_alarm_title_name" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width_linetickview_line"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/rl_alarm_item_content"
+        android:layout_marginBottom="@dimen/width_linetickview_line"
+        android:layout_toRightOf="@id/tdv_alarm_item"
+        android:background="@color/black" />
+
+</RelativeLayout>

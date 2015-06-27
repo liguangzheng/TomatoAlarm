@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LineTickView">
+        <attr name="linewidth" format="reference|dimension" />
+        <attr name="linecolor" format="reference|color" />
+    </declare-styleable>
+    <declare-styleable name="CellTickView">
+        <attr name="rimwidth" format="reference|dimension" />
+        <attr name="rimcolor" format="reference|color" />
+        <attr name="insidestartcolor" format="reference|color" />
+        <attr name="insideendcolor" format="reference|color" />
+    </declare-styleable>
+
+</resources>
